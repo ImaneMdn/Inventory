@@ -1,6 +1,6 @@
 <div class="container-fluid page">
     <div class="page__box p-3 mt-2">
-        <div class="page__box p-3 mt-2" style="display: flex; align-items: center;">Chef Equipe
+        <div class="page__box p-3 mt-2" style="display: flex; align-items: center;">Centre
              <div style="display: flex; justify-content: flex-end; flex: 1; "><mat-form-field>
              <mat-label>Rechercher</mat-label>
               <input matInput (keyup)="applyFilter($event)" placeholder="Ex. John" #input >
@@ -62,23 +62,27 @@
                     </mat-select>
                    
                   
-                  </mat-form-field>
+                  </mat-form-field>-->
+
                   <mat-form-field>
-                    <mat-label>Localité</mat-label>
+                    <mat-label>Nom de Centre</mat-label>
                     <mat-select [(value)]="selectedFilterValue" (selectionChange)="applyFilter($event)">
                         <mat-option value="all">
                             All
                         </mat-option>
-                        <mat-option value="true">
-                            true
+                        <mat-option value="DEPOT RELAIS (D.R.) MEZRENNA">
+                            DEPOT RELAIS (D.R.) MEZRENNA
                         </mat-option>
-                        <mat-option value="false">
-                            false
+                        <mat-option value="ATELIER RÉSEAU MASCARA">
+                           ATELIER RÉSEAU MASCARA
+                        </mat-option>
+                        <mat-option value="DEPARTEMENT COMMERCIAL">
+                            
                         </mat-option>
                     </mat-select>
                    
                   
-                  </mat-form-field> -->
+                  </mat-form-field> 
              </div>
              
            

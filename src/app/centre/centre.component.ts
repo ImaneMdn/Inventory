@@ -15,7 +15,7 @@ import { AuthenticationService } from '../services/authentication.service';
 export class CentreComponent implements OnInit {
   centredata:any;
   dataSource:any;
-  
+  selectedFilterValue = 'all';
   displayedColumns: string[] = ['center_id', 'center_name', 'scanned_count', 'not_scanned_count','pourcentage'];
 
   // dataSource = new MatTableDataSource([
@@ -32,7 +32,7 @@ export class CentreComponent implements OnInit {
    
   // ]);
 //this is for filtering scanned and not scanned
-  selectedFilterValue = 'all';
+ 
  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -56,14 +56,36 @@ export class CentreComponent implements OnInit {
    this.paginatorIntl.itemsPerPageLabel = 'Le nombre de page:';
     
   }
+  //this is the previous one 
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
 
-  applyFilter(event: Event) {
+  //   if (this.dataSource.paginator) {
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }
+
+  applyFilter(event?: Event | MatSelectChange) {
+    if(event instanceof MatSelectChange ) {
+      const filterValue = event.value;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+
+      this.dataSource.filterPredicate = (centredata: { center_name: string; }, filter: string) => {
+        const scannedValue = centredata.center_name.toLowerCase();
+        return filter === 'all' ? true : scannedValue === filter;
+        
+      }
+    }else if (event instanceof Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
+    }
+    
+     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+    
   }
   pplyFilter(event?: Event | MatSelectChange) {
     
