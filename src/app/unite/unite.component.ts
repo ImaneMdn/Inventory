@@ -15,6 +15,7 @@ export class UniteComponent implements OnInit {
 
   unitedata:any;
   dataSource:any;
+  unitedataselect:any;
   selectedFilterValue = 'all';
   displayedColumns: string[] = ['unit_id', 'unit_name', 'total_count', 'scanned_count','not_scanned_count','percentage'];
 
@@ -52,7 +53,12 @@ export class UniteComponent implements OnInit {
       this.dataSource.paginator=this.paginator;
       this.dataSource.sort=this.sort;
    })
-  
+
+   this.auth.uniteselect().subscribe(res => {
+    this.unitedataselect = res;
+    
+ })
+
    this.paginatorIntl.itemsPerPageLabel = 'Le nombre de page:';
     
   }

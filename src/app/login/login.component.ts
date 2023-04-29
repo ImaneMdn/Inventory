@@ -5,6 +5,7 @@ import { ChefuniteService } from './../_services/chefunite.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 import { FormGroup } from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import { AuthenticationService } from '../services/authentication.service';
@@ -17,22 +18,33 @@ export class LoginComponent  implements OnInit {
   
   loginError: boolean = false;
   loginErrormat: boolean = false;
-
+  userdata:any;
   constructor(private router: Router, private auth:AuthenticationService
             
               ) {}
   ngOnInit(): void {
+    this.auth.admin().subscribe(res => {
+      this.userdata = res;
       
+   })
+  
   }
   
   /*
   
   
   */
+
   onSubmit(form: NgForm) {
     const matricule = form.value.matricule;
     const password = form.value.password;
     this.auth.login(matricule, password).subscribe((res: any) => {
+    //   if(this.userdata._status== "accepted") {
+    //     localStorage.setItem('user', JSON.stringify(res));
+    //   this.router.navigate(['home']);
+    //  }else {
+    //   this.toastr.error('Please contact admin', 'Inactive User');
+    //  }
       localStorage.setItem('user', JSON.stringify(res));
       this.router.navigate(['home']);
     }, err => {

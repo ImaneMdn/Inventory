@@ -9,6 +9,7 @@ export class AuthenticationService {
  
   constructor(private http:HttpClient) { }
   selectedFilterValue = 'http://localhost:8000/api/';
+
   login(matricule:string, password:string) {
    return this.http.post(this.selectedFilterValue+'login', {
       matricule:matricule,
@@ -34,6 +35,30 @@ admin() {
  
     const userlist:any = localStorage.getItem('userlist');
     const userObj = JSON.parse(userlist);
+
+    // const token = userObj.token;
+    // const headers = new HttpHeaders({
+    //   Authorization: `Bearer $(token)`,
+    // });,{headers:headers}
+    return this.http.get(this.selectedFilterValue+'getDemandes');
+  }
+getdemande() {
+ 
+    const userrole:any = localStorage.getItem('userrole');
+    const userObj = JSON.parse(userrole);
+
+    // const token = userObj.token;
+    // const headers = new HttpHeaders({
+    //   Authorization: `Bearer $(token)`,
+    // });,{headers:headers}
+    return this.http.get(this.selectedFilterValue+'getDemandes');
+  }
+ 
+  //select user infrastructure 
+  uniteselect() {
+ 
+    const uniteselect:any = localStorage.getItem('uniteselect');
+    const userObj = JSON.parse(uniteselect);
 
     // const token = userObj.token;
     // const headers = new HttpHeaders({

@@ -14,7 +14,7 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-   
+ 
   showIcons = false;
   clicked = false;
   showacceptedFormPopup = false;
@@ -156,6 +156,7 @@ showrefusedForm(row: any){
 
 hideacceptedForm() {
   this.showacceptedFormPopup = false;
+  this.showrefusedFormPopup =false;
 }
 
 hiderefusedForm() {

@@ -42,14 +42,14 @@
     
             
       <h2 matSubheader class="mt-2" style="text-align: left;">Inventaire</h2>
-    <a mat-list-item routerLink="chefcentre" routerLinkActive="list-item-active" >
+    <a *ngIf="user?.role === 'Chef_centre'" mat-list-item routerLink="chefcentre" routerLinkActive="list-item-active" >
         <mat-icon>assignment_ind</mat-icon> <b>Chef Centre</b> </a>
 
        
-    <a mat-list-item routerLink="chefequipe" routerLinkActive="list-item-active">
+    <a *ngIf="user?.role === 'Chef_équipe'" mat-list-item routerLink="chefequipe" routerLinkActive="list-item-active">
         <mat-icon>assignment_ind</mat-icon> <b>Chef Équipe</b> </a>
 
-    <a mat-list-item routerLink="chefunite" routerLinkActive="list-item-active" >
+    <a *ngIf="user?.role === 'Chef_unité'" mat-list-item routerLink="chefunite" routerLinkActive="list-item-active" >
         <mat-icon>assignment_ind</mat-icon><b>Chef Unité</b>  </a>
 
     <a mat-list-item ><mat-icon>description </mat-icon><b>Plan D'inventaire</b></a>
