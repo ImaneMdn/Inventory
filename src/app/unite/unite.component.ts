@@ -79,13 +79,14 @@ export class UniteComponent implements OnInit {
 
       this.dataSource.filterPredicate = (unitedata: { unit_name: string; }, filter: string) => {
         const scannedValue = unitedata.unit_name.toLowerCase();
-        return filter === 'all' ? true : scannedValue === filter;
+        
+         return filter === 'all' ? true : scannedValue === filter;
         
       }
     }else if (event instanceof Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
+     
     }
     
      if (this.dataSource.paginator) {
@@ -94,36 +95,6 @@ export class UniteComponent implements OnInit {
     
   }
   pplyFilter(event?: Event | MatSelectChange) {
-    
-    // if(event instanceof MatSelectChange) {
-    //   const filterValue = event.value;
-    //   this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    //   this.dataSource.filterPredicate = (data, filter) => {
-    //     const scannedValue = data.scanned.toLowerCase();
-    //     return filter === 'all' ? true : scannedValue === filter;
-        
-    //   }
-    // }else if (event instanceof Event) {
-    // const filterValue = (event.target as HTMLInputElement).value;
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    // }
-    
-    // if(event instanceof MatSelectChange) {
-    //   const filterValue = event.value;
-    //   this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    //   this.dataSource.filterPredicate = (data, filter) => {
-    //     const scannedValue = data.scanned.toLowerCase();
-    //     return filter === 'all' ? true : scannedValue === filter;
-        
-    //   }
-    // }else if (event instanceof Event) {
-    // const filterValue = (event.target as HTMLInputElement).value;
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    // }
     
       if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();

@@ -4,7 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatSelectChange } from '@angular/material/select';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
@@ -17,10 +17,12 @@ export class AdminComponent implements OnInit {
  
   showIcons = false;
   clicked = false;
+ 
   showacceptedFormPopup = false;
   showrefusedFormPopup = false;
   selectedRow: any;
   filterOn: boolean = false;
+  selectedStatus: any;
   userlist:any;
   dataSource:any;
   displayedColumns: string[] = ['id', 'name', 'matricule','email','role', 'structure_id', 'status', 'Compte_isActivated', 'edited_by', 'icon'];
@@ -131,19 +133,29 @@ handleAccepted(user: any) {
   
 // }
 
-handleRefused(row: any) {
-  this.selectedRow = row;
-  if (row.accepted && row.refused) {
-    row.accepted = false;
-    row.refused = true;
-    this.showrefusedFormPopup = false;
-    //this.sendStatus(row, 'accepted');
-    localStorage.setItem(`row_${row.id}_status`, 'refused');
-  }else if (row.refused && !row.accepted) {
-          //do nothing
-  }
+handleRefused(user: any) {
+  const id = user.id;
+  this.auth.modifyStatus2(id).subscribe((res) => {
+    // Handle success here
+    console.log('Status modified successfully');
+    this.showacceptedFormPopup = false;
+  }, (err) => {
+    console.error(err);
+  });
 }
+handleEnregistrerClick(user: any) {
+  const id = user.id;
 
+  // Call the accepted or refused API endpoint based on the selected value from the dropdown list
+  if (this.selectedStatus === 'accepted') {
+    this.handleAccepted(user);
+  } else if (this.selectedStatus === 'refused') {
+    this.handleRefused(user);
+  }
+
+  // Hide the popup
+  this.showacceptedFormPopup = false;
+}
 showacceptedForm(row: any) {
   this.showacceptedFormPopup = true;
   this.selectedRow = row;

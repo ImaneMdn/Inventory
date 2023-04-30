@@ -8,10 +8,10 @@ import { Observable } from 'rxjs/internal/Observable';
 export class AuthenticationService {
  
   constructor(private http:HttpClient) { }
-  selectedFilterValue = 'http://localhost:8000/api/';
+  apiss = 'http://localhost:8000/api/';
 
   login(matricule:string, password:string) {
-   return this.http.post(this.selectedFilterValue+'login', {
+   return this.http.post(this.apiss+'login', {
       matricule:matricule,
       password:password
     });
@@ -27,7 +27,7 @@ export class AuthenticationService {
     const headers = new HttpHeaders({
       Authorization: `Bearer $(token)`,
     });
-    return this.http.get(this.selectedFilterValue+'user',{headers:headers});
+    return this.http.get(this.apiss+'user',{headers:headers});
   }
 
 
@@ -40,7 +40,7 @@ admin() {
     // const headers = new HttpHeaders({
     //   Authorization: `Bearer $(token)`,
     // });,{headers:headers}
-    return this.http.get(this.selectedFilterValue+'getDemandes');
+    return this.http.get(this.apiss+'getDemandes');
   }
 getdemande() {
  
@@ -51,10 +51,10 @@ getdemande() {
     // const headers = new HttpHeaders({
     //   Authorization: `Bearer $(token)`,
     // });,{headers:headers}
-    return this.http.get(this.selectedFilterValue+'getDemandes');
+    return this.http.get(this.apiss+'getDemandes');
   }
  
-  //select user infrastructure 
+  //select unite infrastructure 
   uniteselect() {
  
     const uniteselect:any = localStorage.getItem('uniteselect');
@@ -64,7 +64,7 @@ getdemande() {
     // const headers = new HttpHeaders({
     //   Authorization: `Bearer $(token)`,
     // });,{headers:headers}
-    return this.http.get(this.selectedFilterValue+'getDemandes');
+    return this.http.get(this.apiss+'getUnite');
   }
 
   
@@ -77,7 +77,7 @@ getdemande() {
       Authorization: `Bearer $(token)`,
     });
 
-     return this.http.post(this.selectedFilterValue+'logout', {headers:headers})
+     return this.http.post(this.apiss+'logout', {headers:headers})
 
   }
 
@@ -95,14 +95,17 @@ getdemande() {
         structure_id:structure_id,
 
       }
-      return this.http.post(this.selectedFilterValue+'register', data);
+      return this.http.post(this.apiss+'register', data);
   }
 
 
   //accepter refuser la demande de compte:
 
   modifyStatus(id: number) {
-    return this.http.put(this.selectedFilterValue+`/acceptDemandeCompte/${id}`, {} );
+    return this.http.put(this.apiss+`acceptDemandeCompte/${id}`, {} );
+  }
+  modifyStatus2(id: number) {
+    return this.http.put(this.apiss+`refuseDemandeCompte/${id}`, {} );
   }
 
   centre() {
@@ -114,7 +117,7 @@ getdemande() {
     // const headers = new HttpHeaders({
     //   Authorization: `Bearer $(token)`,
     // });,{headers:headers}
-    return this.http.get(this.selectedFilterValue+'infrastructureCentre');
+    return this.http.get(this.apiss+'infrastructureCentre');
   }
 
   localité() {
@@ -126,7 +129,7 @@ getdemande() {
     // const headers = new HttpHeaders({
     //   Authorization: `Bearer $(token)`,
     // });,{headers:headers}
-    return this.http.get(this.selectedFilterValue+'infrastructureLocalite');
+    return this.http.get(this.apiss+'infrastructureLocalite');
   }
 
   unite() {
@@ -139,7 +142,7 @@ getdemande() {
       // const headers = new HttpHeaders({
       //   Authorization: `Bearer $(token)`,
       // });,{headers:headers}
-      return this.http.get(this.selectedFilterValue+'infrastructureUnite');
+      return this.http.get(this.apiss+'infrastructureUnite');
     }
   
   

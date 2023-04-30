@@ -299,6 +299,20 @@ button {
 .popup-container-editer .close-btn {
   position: absolute;
   display: flex;
+  align-items: center;
+  align-items:center;
+  justify-content:center;
+  right:0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #213164;
+  padding: 0;
+ 
+}
+/* .popup-container-editer .close-btn {
+  position: absolute;
+  display: flex;
   align-items:center;
   justify-content:center;
   right:0;
@@ -307,7 +321,7 @@ button {
   height: 30px;
   background-color: #213164;
  
-}
+} */
 
 
 .popup-container-editer button {

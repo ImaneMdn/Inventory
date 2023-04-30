@@ -11,10 +11,28 @@ import { MatSelectChange } from '@angular/material/select';
   styleUrls: ['./chefequipe.component.css']
 })
 export class ChefequipeComponent  implements OnInit {
-  
-  displayedColumns: string[] = ['id', 'firstname', 'lastname', 'here','scanned','there','mdp' , 'email' , 'text'];
 
-  dataSource = new MatTableDataSource([
+  showlocalitescanneePopup = false;
+  showlocalitenonscanneePopup = false;
+  displayedColumns: string[] = ['id', 'firstname', 'lastname', 'here','scanned','there','mdp' , 'email' , 'text'];
+  displayedColumns2: string[] = ['nom', 'structure_id'];
+  
+  datasource2 = new MatTableDataSource([
+    {nom:'dcsi', structure_id: '1234',},
+    {nom: 'dcsi', structure_id: '234',},
+    {nom: 'dcsi', structure_id: '1234',},
+    {nom:'dcsi', structure_id: '1234',},
+    {nom: 'dcsi', structure_id: '234',},
+    {nom: 'dcsi', structure_id: '1234',},
+    {nom:'dcsi', structure_id: '1234',},
+    {nom: 'dcsi', structure_id: '234',},
+    {nom: 'dcsi', structure_id: '1234',},
+    {nom: 'dcsi', structure_id: '1234',},
+    {nom:'dcsi', structure_id: '1234',},
+    {nom: 'dcsi', structure_id: '234',},
+    {nom: 'dcsi', structure_id: '1234',}
+  ]);
+  dataSource1 = new MatTableDataSource([
     { id: 1, firstname: 'John', lastname: 'Doe', here: true , scanned: 'true' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk'},
     { id: 2, firstname: 'Jane', lastname: 'Doe', here: false , scanned: 'false' , there: true , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
     { id: 3, firstname: 'Bob', lastname: 'Smith', here: true , scanned: 'false' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
@@ -31,6 +49,7 @@ export class ChefequipeComponent  implements OnInit {
   selectedFilterValue = 'all';
  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator2!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private paginatorIntl: MatPaginatorIntl) {
@@ -38,9 +57,13 @@ export class ChefequipeComponent  implements OnInit {
   }
 
   ngAfterViewInit() {
-     this.dataSource.paginator = this.paginator;
-     this.dataSource.sort = this.sort;
+     this.dataSource1.paginator = this.paginator;
+     this.dataSource1.sort = this.sort;
+     this.datasource2.paginator = this.paginator2;
+     this.datasource2.sort = this.sort;
      this.paginatorIntl.itemsPerPageLabel = 'Le nombre de page:';
+    
+
   }
 
   ngOnInit(): void {
@@ -52,25 +75,48 @@ export class ChefequipeComponent  implements OnInit {
   applyFilter(event?: Event | MatSelectChange) {
     if(event instanceof MatSelectChange) {
       const filterValue = event.value;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
+      this.dataSource1.filter = filterValue.trim().toLowerCase();
 
-      this.dataSource.filterPredicate = (data, filter) => {
+      this.dataSource1.filterPredicate = (data, filter) => {
         const scannedValue = data.scanned.toLowerCase();
         return filter === 'all' ? true : scannedValue === filter;
         
       }
     }else if (event instanceof Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource1.filter = filterValue.trim().toLowerCase();
 
     }
     
-     if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+     if (this.dataSource1.paginator) {
+      this.dataSource1.paginator.firstPage();
+    }
+    if (this.datasource2.paginator) {
+      this.datasource2.paginator.firstPage();
     }
     
   }
+  showlocalitescannee() {
+    this.showlocalitescanneePopup = true;
+    
+    
+  }
+  showlocalitenonscannee(){
+    this.showlocalitenonscanneePopup = true;
+    
+  }
+  
+  hidescanneeForm() {
+    this.showlocalitescanneePopup = false;
 
+     
+  }
+  hidenonscanneeForm() {
+    this.showlocalitenonscanneePopup = false;
+
+     
+  }
+  
   
  
 }

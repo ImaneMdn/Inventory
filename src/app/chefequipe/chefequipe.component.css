@@ -67,3 +67,46 @@
     font-family: arial,sans-serif;
   }
   
+  .example-button-row {
+    display: flex;
+    padding: 0px;
+    
+    justify-content: space-between;/*if i want to make buttons closer to each other remove it */
+    
+   
+   }
+   
+   .example-button-row .mat-mdc-button-base {
+    
+     margin: 8px 8px 15px 150px;
+    
+   }
+
+   .popup-container-editer {
+    background-color: white;
+    width: 300px;
+    padding: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 400px;
+  }
+
+  .popup-container-editer .close-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    align-items:center;
+    justify-content:center;
+    right:3px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #213164;
+    padding: 0;
+   
+  }
