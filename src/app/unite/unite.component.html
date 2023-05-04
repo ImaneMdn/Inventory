@@ -18,7 +18,7 @@
                     <mat-label>Nom d'unité</mat-label>
                     <mat-select [(value)]="selectedFilterValue" (selectionChange)="applyFilter($event)">
                         <mat-option value="all">All</mat-option>
-                        <mat-option *ngFor="let unit of unitedataselect" [value]="unit.UCM_LIB">{{unit.UCM_LIB}}</mat-option>
+                        <mat-option *ngFor="let unit of unitedataselect" [value]="unit.UCM_LIB">{{unit.UCM_ID}} {{unit.UCM_LIB}}</mat-option>
                       </mat-select>
                     
                   

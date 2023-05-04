@@ -13,6 +13,7 @@ import { UniteComponent } from './unite/unite.component';
 import { LocaliteComponent } from './localite/localite.component';
 import { SettingComponent } from './setting/setting.component';
 import { AdminComponent } from './admin/admin.component';
+import { ChartsComponent } from './charts/charts.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent,
     children: [
+      { path: 'charts',  component: ChartsComponent },
       { path: 'chefunite',  component: ChefuniteComponent },
       { path: 'chefequipe',  component: ChefequipeComponent },
       { path: 'chefcentre', component: ChefcentreComponent},

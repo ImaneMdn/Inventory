@@ -38,10 +38,13 @@ import { LocaliteComponent } from './localite/localite.component';
 import { SettingComponent } from './setting/setting.component';
 import { AdminComponent } from './admin/admin.component';
 import { MatButtonModule } from '@angular/material/button';
-
-
-
-
+import { NgChartsModule } from 'ng2-charts';
+import { ChartsComponent } from './charts/charts.component';
+import { TopWidgetsComponent } from './top-widgets/top-widgets.component';
+import { SalesComponent } from './sales/sales.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChartModule } from 'angular-highcharts';
 
 
 
@@ -61,7 +64,11 @@ import { MatButtonModule } from '@angular/material/button';
     CentreComponent,
     LocaliteComponent,
     SettingComponent,
-    AdminComponent
+    AdminComponent,
+    ChartsComponent,
+    TopWidgetsComponent,
+    SalesComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +94,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     ReactiveFormsModule,
     MatButtonModule,
-    ToastrModule
+    ToastrModule,
+    NgChartsModule,
+    FontAwesomeModule,
+    ChartModule,
+    
     
    
   

@@ -1,0 +1,93 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    
+}
+.example-container {
+  height: 500px;
+  width: 920px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.page .page__box {
+    min-height: 120px;
+    background: #213164;
+    margin: 0 -1rem;
+    font-size: 36px;
+  }
+  .page .page__content {
+    min-height: calc(100vh - 160px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 2rem;
+  }
+  
+  .page .page__content .page__content-data {
+    top: 50%;
+    left: 50%;
+   
+    transform: translate(-50%, -50%);
+    
+  }
+
+  .mat-cell {
+    font-size: 12px;
+  }
+  
+  table {
+    width: 100%;
+    
+  }
+  .mat-mdc-form-field {
+
+    font-size: 14px;
+    
+    
+  }
+  
+  
+  td, th {
+    width: 25%;
+    font-size: 23px;
+    font-family: arial,sans-serif;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  
+  .custom-paginator {
+    font-size: 20px; /* change the font size */
+    height: 40px; /* change the height */
+    font-family: arial,sans-serif;
+  }
+ 
+  
+ .middle-section {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .widget {
+    height: 330px;
+    margin-right: 450px;
+    margin-bottom: 200px;
+    border-radius: 5px;
+  
+    box-shadow: 5px 5px 5px #939393;
+   
+ }
+
+ .bottom-section {
+    height: 330px;
+    margin-left: 5px;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #939393;
+   
+ }

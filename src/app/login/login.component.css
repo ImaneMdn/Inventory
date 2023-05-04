@@ -219,3 +219,717 @@
     opacity: 0.8;
 }
 
+
+
+
+/*fkldkdle*/
+@media screen and (min-width: 1024px) {
+    .login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 27vh;
+      background: #fafafa;
+  
+    }
+  
+    .inventoryman {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      background-color: #fafafa;
+  
+    }
+  
+    .inventoryman img {
+      position: absolute;
+      bottom: 5px;
+      left: 160px;
+      right: 170px;
+      width: 550px;
+      height: auto;
+  
+    }
+  
+    .card {
+  
+      position: absolute;
+      bottom: 130px;
+      right: 250px;
+      width: 380px;
+      height: 500px;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+  
+    }
+  
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #213164, #213164, #213164);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+  
+    }
+  
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #213164, #213164, #213164);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -3s;
+  
+    }
+  
+    .borderLine {
+      position: absolute;
+      top: 0;
+      inset: 0;
+  
+    }
+  
+    .borderLine::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #f0b321, #f0b321, #f0b321);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -1.5s;
+  
+  
+    }
+  
+    .borderLine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #f0b321, #f0b321, #f0b321);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -4.5s;
+  
+  
+    }
+  
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  
+    .card form {
+  
+      position: absolute;
+      inset: 4px;
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .card form img {
+      display: flex;
+      max-width: 40%; /* adjust as needed */
+      max-height: 50%;
+      margin: auto;
+  
+    }
+  
+    .card form h2 {
+      color: #404040;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+  
+    .card form .inputcard {
+      position: relative;
+      width: 300px;
+      margin-top: 35px;
+    }
+  
+    .card form .inputcard input {
+      position: relative;
+      width: 100%;
+      padding: 25px 10px 20px;
+      background: transparent;
+      outline: none;
+      border: none;
+      box-shadow: none;
+      color: #343a34;
+      font-size: 1em;
+      letter-spacing: 0.05em;
+      transition: 0.5s;
+      z-index: 10;
+    }
+  
+    .card form .inputcard span {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      padding: 2px 0px 15px;
+      pointer-events: none;
+      color: #404040;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      transition: 0.5s;
+    }
+  
+  
+    .card form .inputcard i {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #a0a0a0;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+  
+    .card form .inputcard input:hover ~ i {
+      height: 44px;
+      background: #f8f9fa;
+    }
+  
+    .card form .together {
+      display: flex;
+      justify-content: space-between;
+  
+    }
+  
+    .card form .links {
+      display: flex;
+      margin: 10px 0;
+      font-size: 11px;
+      color: #404040;
+  
+  
+    }
+  
+    .card form .links span:hover {
+      color: #fff;
+    }
+  
+    .card form .inputcard input[type="submit"] {
+      display: flex;
+  
+      color: #fafafa;
+      border: none;
+      outline: none;
+      padding: 9px 54px;
+      background: #213164;
+      cursor: pointer;
+      font-size: 0.9em;
+      margin: auto;
+      border-radius: 5px;
+      font-weight: 600;
+  
+      width: 150px;
+  
+    }
+  
+    .card form input[type="submit"]:active {
+  
+      opacity: 0.8;
+    }
+  }
+  /* For tablette */
+  @media screen and (min-width: 480px) {
+    .login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 27vh;
+      background: #fafafa;
+  
+    }
+  
+    .inventoryman {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      background-color: #fafafa;
+  
+    }
+  
+    .inventoryman img {
+      position: absolute;
+      bottom: 5px;
+      left: 160px;
+      right: 170px;
+      width: 550px;
+      height: auto;
+  
+    }
+  
+    .card {
+  
+      position: absolute;
+      bottom: 130px;
+      right: 250px;
+      width: 380px;
+      height: 500px;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+  
+    }
+  
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #213164, #213164, #213164);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+  
+    }
+  
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #213164, #213164, #213164);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -3s;
+  
+    }
+  
+    .borderLine {
+      position: absolute;
+      top: 0;
+      inset: 0;
+  
+    }
+  
+    .borderLine::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #f0b321, #f0b321, #f0b321);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -1.5s;
+  
+  
+    }
+  
+    .borderLine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #f0b321, #f0b321, #f0b321);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -4.5s;
+  
+  
+    }
+  
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  
+    .card form {
+  
+      position: absolute;
+      inset: 4px;
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .card form img {
+      display: flex;
+      max-width: 40%; /* adjust as needed */
+      max-height: 50%;
+      margin: auto;
+  
+    }
+  
+    .card form h2 {
+      color: #404040;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+  
+    .card form .inputcard {
+      position: relative;
+      width: 300px;
+      margin-top: 35px;
+    }
+  
+    .card form .inputcard input {
+      position: relative;
+      width: 100%;
+      padding: 25px 10px 20px;
+      background: transparent;
+      outline: none;
+      border: none;
+      box-shadow: none;
+      color: #343a34;
+      font-size: 1em;
+      letter-spacing: 0.05em;
+      transition: 0.5s;
+      z-index: 10;
+    }
+  
+    .card form .inputcard span {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      padding: 2px 0px 15px;
+      pointer-events: none;
+      color: #404040;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      transition: 0.5s;
+    }
+  
+  
+    .card form .inputcard i {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #a0a0a0;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+  
+    .card form .inputcard input:hover ~ i {
+      height: 44px;
+      background: #f8f9fa;
+    }
+  
+    .card form .together {
+      display: flex;
+      justify-content: space-between;
+  
+    }
+  
+    .card form .links {
+      display: flex;
+      margin: 10px 0;
+      font-size: 11px;
+      color: #404040;
+  
+  
+    }
+  
+    .card form .links span:hover {
+      color: #fff;
+    }
+  
+    .card form .inputcard input[type="submit"] {
+      display: flex;
+  
+      color: #fafafa;
+      border: none;
+      outline: none;
+      padding: 9px 54px;
+      background: #213164;
+      cursor: pointer;
+      font-size: 0.9em;
+      margin: auto;
+      border-radius: 5px;
+      font-weight: 600;
+  
+      width: 150px;
+  
+    }
+  
+    .card form input[type="submit"]:active {
+  
+      opacity: 0.8;
+    }
+  }
+  /* For mobile phone */
+  @media screen and (max-width: 480px) {
+    .login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 27vh;
+      background: #fafafa;
+  
+    }
+  
+    .inventoryman {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      background-color: #fafafa;
+      display: none;
+  
+    }
+  
+    .inventoryman img {
+      position: absolute;
+      bottom: 5px;
+      left: 160px;
+      right: 170px;
+      width: 550px;
+      height: auto;
+  
+    }
+  
+    .card {
+  
+      position: absolute;
+      bottom: 130px;
+      width: 380px;
+      height: 500px;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+  
+    }
+  
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #213164, #213164, #213164);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+  
+    }
+  
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #213164, #213164, #213164);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -3s;
+  
+    }
+  
+    .borderLine {
+      position: absolute;
+      top: 0;
+      inset: 0;
+  
+    }
+  
+    .borderLine::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #f0b321, #f0b321, #f0b321);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -1.5s;
+  
+  
+    }
+  
+    .borderLine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 380px;
+      height: 420px;
+      background: linear-gradient(0deg, transparent, transparent, #f0b321, #f0b321, #f0b321);
+      z-index: 1;
+      transform-origin: bottom right;
+      animation: animate 6s linear infinite;
+      animation-delay: -4.5s;
+  
+  
+    }
+  
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+  
+    .card form {
+  
+      position: absolute;
+      inset: 4px;
+      background: #ffffff;
+      padding: 50px 40px;
+      border-radius: 8px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .card form img {
+      display: flex;
+      max-width: 40%; /* adjust as needed */
+      max-height: 50%;
+      margin: auto;
+  
+    }
+  
+    .card form h2 {
+      color: #404040;
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+  
+    .card form .inputcard {
+      position: relative;
+      width: 300px;
+      margin-top: 35px;
+    }
+  
+    .card form .inputcard input {
+      position: relative;
+      width: 100%;
+      padding: 25px 10px 20px;
+      background: transparent;
+      outline: none;
+      border: none;
+      box-shadow: none;
+      color: #343a34;
+      font-size: 1em;
+      letter-spacing: 0.05em;
+      transition: 0.5s;
+      z-index: 10;
+    }
+  
+    .card form .inputcard span {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      padding: 2px 0px 15px;
+      pointer-events: none;
+      color: #404040;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      transition: 0.5s;
+    }
+  
+  
+    .card form .inputcard i {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #a0a0a0;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+  
+    .card form .inputcard input:hover ~ i {
+      height: 44px;
+      background: #f8f9fa;
+    }
+  
+    .card form .together {
+      display: flex;
+      justify-content: space-between;
+  
+    }
+  
+    .card form .links {
+      display: flex;
+      margin: 10px 0;
+      font-size: 11px;
+      color: #404040;
+  
+  
+    }
+  
+    .card form .links span:hover {
+      color: #fff;
+    }
+  
+    .card form .inputcard input[type="submit"] {
+      display: flex;
+  
+      color: #fafafa;
+      border: none;
+      outline: none;
+      padding: 9px 54px;
+      background: #213164;
+      cursor: pointer;
+      font-size: 0.9em;
+      margin: auto;
+      border-radius: 5px;
+      font-weight: 600;
+  
+      width: 150px;
+  
+    }
+  
+    .card form input[type="submit"]:active {
+  
+      opacity: 0.8;
+    }
+  }
+  
+  
