@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +10,27 @@ import { Observable } from 'rxjs/internal/Observable';
 export class AuthenticationService {
  
   constructor(private http:HttpClient) { }
-  apiss = 'http://localhost:8000/api/';
+  apiss = 'http://192.168.43.251:8000/api/';
+  //http://localhost:8000/api/
 
-  login(matricule:string, password:string) {
-   return this.http.post(this.apiss+'login', {
-      matricule:matricule,
-      password:password
-    });
+  login(matricule:string, password:string): Observable<any> {
+   return this.http.post<any>(this.apiss + 'login', {
+    matricule: matricule,
+    password: password
+  }).pipe(
+    tap(response => {
+      const token = response.token;
+      const userObj = { token: token };
+      localStorage.setItem('user', JSON.stringify(userObj));
+    })
+  );
+  //   const user:any = localStorage.getItem('user');
+  //   const userObj = JSON.parse(user);
+   
+  //  return this.http.post(this.apiss+'login', {
+  //     matricule:matricule,
+  //     password:password
+  //   });
   }
 
   //user info
@@ -42,17 +58,40 @@ admin() {
     // });,{headers:headers}
     return this.http.get(this.apiss+'getDemandes');
   }
-getdemande() {
- 
-    const userrole:any = localStorage.getItem('userrole');
-    const userObj = JSON.parse(userrole);
-
-    // const token = userObj.token;
-    // const headers = new HttpHeaders({
-    //   Authorization: `Bearer $(token)`,
-    // });,{headers:headers}
-    return this.http.get(this.apiss+'getDemandes');
+  getdemande() {
+    const userrole: any = localStorage.getItem('user');
+    console.log('userrole', userrole); // Add this line to check the value of 'userrole'
+  
+    if (userrole) {
+      const userObj = JSON.parse(userrole);
+      console.log('object', userObj);
+  
+      const token = userObj.token;
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      });
+      return this.http.get(this.apiss + 'role', { headers: headers });
+    } else {
+      console.log('Token not found in localStorage');
+      // Handle the case when token is not found
+      // For example, you can redirect the user to the login page or display an error message
+      return throwError('Token not found in localStorage');
+    }
   }
+// getdemande() {
+ 
+//     const userrole:any = localStorage.getItem('token');
+//     const userObj = JSON.parse(userrole);
+//     console.log('object', userObj);
+    
+//      const token = userObj.token;
+//      const headers = new HttpHeaders({
+//       Authorization: `Bearer ${token}`,
+//     });
+//   return this.http.get(this.apiss + 'role', { headers: headers });
+//     //return this.http.get(this.apiss+'role');
+
+//   }
  
   //select unite infrastructure 
   uniteselect() {
@@ -112,11 +151,6 @@ getdemande() {
  
     const centredata:any = localStorage.getItem('centredata');
     const userObj = JSON.parse(centredata);
-
-    // const token = userObj.token;
-    // const headers = new HttpHeaders({
-    //   Authorization: `Bearer $(token)`,
-    // });,{headers:headers}
     return this.http.get(this.apiss+'infrastructureCentre');
   }
 
@@ -124,11 +158,6 @@ getdemande() {
  
     const localitedata:any = localStorage.getItem('localitedata');
     const userObj = JSON.parse(localitedata);
-
-    // const token = userObj.token;
-    // const headers = new HttpHeaders({
-    //   Authorization: `Bearer $(token)`,
-    // });,{headers:headers}
     return this.http.get(this.apiss+'infrastructureLocalite');
   }
 
@@ -137,13 +166,29 @@ getdemande() {
  
       const unitedata:any = localStorage.getItem('unitedata');
       const userObj = JSON.parse(unitedata);
-  
-      // const token = userObj.token;
-      // const headers = new HttpHeaders({
-      //   Authorization: `Bearer $(token)`,
-      // });,{headers:headers}
       return this.http.get(this.apiss+'infrastructureUnite');
     }
+
+listeinventaire(){
+  const userrole: any = localStorage.getItem('user');
+  console.log('userrole', userrole); // Add this line to check the value of 'userrole'
+
+  if (userrole) {
+    const userObj = JSON.parse(userrole);
+    console.log('object', userObj);
+
+    const token = userObj.token;
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+    return this.http.get(this.apiss + 'inventoryList', { headers: headers });
+  } else {
+    console.log('Token not found in localStorage');
+    // Handle the case when token is not found
+    // For example, you can redirect the user to the login page or display an error message
+    return throwError('Token not found in localStorage');
+  }
+}
   
   
 }

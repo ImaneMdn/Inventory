@@ -9,28 +9,6 @@
     <a mat-list-item routerLink="charts" routerLinkActive="list-item-active" >
         <mat-icon>dashboard </mat-icon> <b>Charts</b> </a>
     <h2 matSubheader class="mt-2" style="text-align: left; ">Infrastricture</h2>
-
-    <!--
-        <mat-list-item [matMenuTriggerFor]="inventoryMenu">
-        <mat-icon>inventory</mat-icon>
-        <b>Inventory</b>
-      </mat-list-item>
-     
-      
-      <mat-menu #inventoryMenu="matMenu">
-        <a mat-list-item routerLink="chefunite" routerLinkActive="list-item-active" >
-            <mat-icon>dashboard </mat-icon> <b>Unité</b> </a>
-    
-        <a mat-list-item routerLink="chefcentre" routerLinkActive="list-item-active" >
-                <mat-icon>dashboard </mat-icon> <b>Centre</b> </a>
-    
-        <a mat-list-item routerLink="cheféquipe" routerLinkActive="list-item-active" >
-                    <mat-icon>dashboard </mat-icon> <b>Localité</b> </a>
-      </mat-menu>
-    -->
-   
-     
-      
      
         <a mat-list-item routerLink="unite" routerLinkActive="list-item-active" >
             <mat-icon>dashboard </mat-icon> <b>Unité</b> </a>
@@ -45,14 +23,14 @@
     <!-- *ngIf="user?.role === 'Chef_centre'"   *ngIf="user?.role === 'Chef_équipe'"  *ngIf="user?.role === 'Chef_unité'"-->
             
       <h2 matSubheader class="mt-2" style="text-align: left;">Inventaire</h2>
-    <a  mat-list-item routerLink="chefcentre" routerLinkActive="list-item-active" >
+    <a *ngIf="user?.role_id === '2'"  mat-list-item routerLink="chefcentre" routerLinkActive="list-item-active" >
         <mat-icon>assignment_ind</mat-icon> <b>Chef Centre</b> </a>
 
        
-    <a  mat-list-item routerLink="chefequipe" routerLinkActive="list-item-active">
+    <a *ngIf="user?.role_id === '3'" mat-list-item routerLink="chefequipe" routerLinkActive="list-item-active">
         <mat-icon>assignment_ind</mat-icon> <b>Chef Équipe</b> </a>
 
-    <a  mat-list-item routerLink="chefunite" routerLinkActive="list-item-active" >
+    <a *ngIf="user?.role_id === '1'"  mat-list-item routerLink="chefunite" routerLinkActive="list-item-active" >
         <mat-icon>assignment_ind</mat-icon><b>Chef Unité</b>  </a>
 
     <a mat-list-item ><mat-icon>description </mat-icon><b>Plan D'inventaire</b></a>

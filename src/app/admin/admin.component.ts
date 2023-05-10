@@ -112,6 +112,7 @@ handleAccepted(user: any) {
   this.auth.modifyStatus(id).subscribe((res) => {
     // Handle success here
     console.log('Status modified successfully');
+    localStorage.setItem(`row_${id}_status`, 'accepted');
     this.showacceptedFormPopup = false;
   }, (err) => {
     console.error(err);

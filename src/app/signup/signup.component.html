@@ -5,7 +5,7 @@
   <div class="signup" >
     <div class="card">
          <span class="borderLine"></span>   
-          <!--login function is from login value in input-->
+         
        <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
         <img src="assets/image/naftallogo.png" alt="naftal logo">
          
@@ -49,9 +49,9 @@
         <div class="inputcard">
           <select name="role"  ngModel>
                    <option value="" disabled selected>choisi un role</option>
-                   <option value="chefunite">chefunite</option>
-                   <option value="chefcentre">chefcentre</option>
-                   <option value="chefequipe">chefequipe</option>
+                   <option value="Chef_unité">chefunite</option>
+                   <option value="Chef_centre">chefcentre</option>
+                   <option value="Chef_équipe">chefequipe</option>
                </select>
                <span > <b> Role</b></span>
           
@@ -63,8 +63,8 @@
               
                 <select name="structure_type"  [(ngModel)]="selectedStructure" (change)="onSelectStructure($event)">
                <option value="" disabled selected>choisi une stricture</option>
-               <option value="centre">centre</option>
-               <option value="unite">unité</option>
+               <option value="Centre">centre</option>
+               <option value="Unite">unité</option>
                
                </select> 
                 <span > <b> Structure</b></span>
@@ -124,13 +124,8 @@
       <div class="inputcard" style="margin: auto;"> 
         <input type="submit"  value="Sign Up">
       </div>
-        
-        
-         
-       
-        
-       
-      </form>
+  
+   </form>
       
      
     </div>

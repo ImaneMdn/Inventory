@@ -18,20 +18,6 @@ export class CentreComponent implements OnInit {
   selectedFilterValue = 'all';
   displayedColumns: string[] = ['center_id', 'center_name', 'scanned_count', 'not_scanned_count','pourcentage'];
 
-  // dataSource = new MatTableDataSource([
-  //   { id: 1, firstname: 'John', lastname: 'Doe', here: true , scanned: 'true' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk'},
-  //   { id: 2, firstname: 'Jane', lastname: 'Doe', here: false , scanned: 'false' , there: true , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
-  //   { id: 3, firstname: 'Bob', lastname: 'Smith', here: true , scanned: 'false' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
-  //   { id: 1, firstname: 'John', lastname: 'Doe', here: true , scanned: 'true' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk'},
-  //   { id: 2, firstname: 'Jane', lastname: 'Doe', here: false , scanned: 'true' , there: true , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
-  //   { id: 3, firstname: 'Bob', lastname: 'Smith', here: true , scanned: 'false' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
-  //   { id: 1, firstname: 'John', lastname: 'Doe', here: true , scanned: 'false' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk'},
-  //   { id: 2, firstname: 'Jane', lastname: 'Doe', here: false , scanned: 'true' , there: true , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
-  //   { id: 3, firstname: 'Bob', lastname: 'Smith', here: true , scanned: 'false' , there: false , mdp: true , email: 'skdfs' , text: 'ldfsjk' },
-    
-   
-  // ]);
-//this is for filtering scanned and not scanned
  
  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -56,15 +42,7 @@ export class CentreComponent implements OnInit {
    this.paginatorIntl.itemsPerPageLabel = 'Le nombre de page:';
     
   }
-  //this is the previous one 
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
+  
 
   applyFilter(event?: Event | MatSelectChange) {
     if(event instanceof MatSelectChange ) {

@@ -34,7 +34,7 @@ export class SettingComponent implements OnInit{
   }
 
   submitPasswordForm() {
-    // Implement password form submission logic here
+   
   }
 
 }
